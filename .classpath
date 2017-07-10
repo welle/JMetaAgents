@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JMetaagents/javasourceTest"/>
+	<classpathentry kind="src" path="JMetaagents/javasource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.annotation_2.0.0.v20140415-1436.jar"/>
+	<classpathentry kind="lib" path="lib/SwissKnife-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/fluent-hc-4.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/httpclient-4.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/httpclient-cache-4.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/httpcore-4.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/httpmime-4.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/JHTTPRequest/JHTTPRequest.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4">
+		<attributes>
+			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

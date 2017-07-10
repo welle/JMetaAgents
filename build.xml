@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project name="JMetaagents" default="jars" basedir=".">
+	
+	<!-- Tests -->
+	<property name="sonar.java.test.binaries" value="JMetadata/classes" />
+	<property name="sonar.java.test.libraries" value="libTest/**/*.jar,libs/**/*.jar" />
+	<property name="sonar.jacoco.reportPath" value="reports/jacoco/jacoco.exec" />
+
+	<import file="classpath.xml" />
+	<import file="buildSonar.xml" />
+	<import file="buildJaCoCo.xml" />	
+	
+	<target name="chkBuildProperties" >
+		<available file="build.properties" type="file" property="build.properties.present"/>
+	</target>
+	<target name="copyBuildProperties" unless="build.properties.present" >
+		<echo message="Creating properties file." />
+    	<copy file="build.properties.sample" tofile="build.properties" overwrite="false" verbose="true" />
+	</target>
+	<target name="init" depends="chkBuildProperties,copyBuildProperties" >
+		<echo message="Reading properties files." />
+    	<property file="build.properties" />
+    	<property file="version.properties" />
+	</target>
+
+    <target name="cleanJars" depends="init">
+        <ant antfile="buildJars.xml" target="cleanJars" />
+
+        <delete dir="JMetaagents/classes" />
+    </target>
+
+    <target name="all" depends="jars,javadoc" />
+
+    <target name="jars" depends="init">
+        <echo message="Build JMetaagents Jars" />
+
+        <property name="classes" value="bin" />
+
+        <ant antfile="buildJars.xml" />
+    </target>
+
+	<target name="allocine jars" depends="init">
+        <echo message="Build JMetaagents JAllocine Jars" />
+
+        <property name="classes" value="JMetaagents/classes" />
+
+        <ant antfile="buildJars.xml" target="allocine jar" />
+    </target>
+
+	<target name="jtmdb jars" depends="init">
+        <echo message="Build JMetaagents JTMDB Jars" />
+
+        <property name="classes" value="JMetaagents/classes" />
+
+        <ant antfile="buildJars.xml" target="jtmdb jar" />
+    </target>
+
+	<target name="jrottenttomatoes jars" depends="init">
+        <echo message="Build JMetaagents JRottenTomatoes Jars" />
+
+        <property name="classes" value="JMetaagents/classes" />
+
+        <ant antfile="buildJars.xml" target="jrottentomatoes jar" />
+    </target>
+
+	<target name="jimdb jars" depends="init">
+        <echo message="Build JMetaagents JIMDB Jars" />
+
+        <property name="classes" value="JMetaagents/classes" />
+
+        <ant antfile="buildJars.xml" target="jimdb jar" />
+    </target>
+	
+	<target name="jtvdb jars" depends="init">
+        <echo message="Build JMetaagents JTVDB Jars" />
+
+        <property name="classes" value="JMetaagents/classes" />
+
+        <ant antfile="buildJars.xml" target="jtvdb jar" />
+    </target>
+
+    <target name="javadoc" depends="init">
+        <echo message="Running Javadoc on JMetaagents" />
+
+        <ant antfile="buildJavadoc.xml" />
+    </target>
+	
+	<!-- Test and build all files  -->
+		<!-- To run this: use "ant" (default) or "ant run" -->
+		<target name="run" depends="rebuild"/>
+
+</project>

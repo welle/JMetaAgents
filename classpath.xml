@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="JMetaagents Classpath">
+
+	<path id="JMetaagents.classpath">
+		<fileset dir="lib/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="lib/JHTTPRequest/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="libTest/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+</project>

@@ -1,0 +1,24 @@
+language: java
+sudo: false
+before_script:
+  # Ant build tool configuration
+  - cp build.properties.sample build.properties
+  - mkdir ./JMetadata/classes
+  - sed -i -e "s,jars_dest =,jars_dest =./," build.properties
+script:
+  # other script steps might be done before running the actual analysis
+  #- sonar-scanner
+  - ant run
+  - bash <(curl -s https://codecov.io/bash)
+env:
+  global:
+    - classes=JMetadata/classes
+    - jars_dest=./
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+addons:
+  sonarcloud:
+    organization: "welle-github" # the key of the org you chose at step #3
