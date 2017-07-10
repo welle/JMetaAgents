@@ -26,12 +26,12 @@
 	<target name="compile">
 		<mkdir dir="${result.classes.dir}" />
 		<javac encoding="8859_1" destdir="${result.classes.dir}" source="1.8" target="1.8" includeantruntime="false">
-            <src path="JMetaAgents/javasource" />
+            <src path="JMetaagents/javasource" />
             <classpath refid="JMetaagents.classpath" />
         </javac>
 
         <javac encoding="8859_1" destdir="${result.test-classes.dir}" source="1.8" target="1.8" includeantruntime="false">
-            <src path="JMetaAgents/javasourceTest" />
+            <src path="JMetaagents/javasourceTest" />
             <classpath refid="JMetaagents.classpath" />
         </javac>
 		<javac srcdir="${src.dir}" destdir="${result.classes.dir}"
