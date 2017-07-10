@@ -1,3 +1,3 @@
-# JMetaAgents [![Build Status](https://travis-ci.org/welle/JMetaAgents.svg?branch=master)](https://travis-ci.org/welle/JMetaAgents) [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=JMetaAgents)](https://sonarcloud.io/dashboard/index/JMetaAgents)#
+# JMetaAgents [![Build Status](https://travis-ci.org/welle/JMetaAgents.svg?branch=master)](https://travis-ci.org/welle/JMetaAgents) [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=JMetaAgents)](https://sonarcloud.io/dashboard/index/JMetaAgents) #
 
 Java library to retrieve Meta Agents informations from Allocine, IMDB,...
