@@ -1,1 +1,3 @@
+# JMetaAgents [![Build Status](https://travis-ci.org/welle/JMetaAgents.svg?branch=master)](https://travis-ci.org/welle/JMetaAgents)#
+
 Java library to retrieve Meta Agents informations from Allocine, IMDB,...
