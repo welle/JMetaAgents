@@ -8,11 +8,23 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9.jar" sourcepath="lib/jackson-annotations-2.8.9-sources.jar">
+		<attributes>
+			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/jackson-core-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-core-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.9.jar" sourcepath="lib/jackson-core-2.8.9-sources.jar">
+		<attributes>
+			<attribute name="annotationpath" value="/JMediaInfo/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9.jar" sourcepath="lib/jackson-databind-2.8.9-sources.jar">
+		<attributes>
+			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.jdt.annotation_2.0.0.v20140415-1436.jar"/>
 	<classpathentry kind="lib" path="lib/SwissKnife-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/JHTTPRequest/commons-logging-1.1.1.jar"/>
