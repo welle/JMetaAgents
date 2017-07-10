@@ -3,7 +3,8 @@ sudo: false
 before_script:
   # Ant build tool configuration
   - cp build.properties.sample build.properties
-  - mkdir ./JMetadata/classes
+  - mkdir ./JMetaAgents/classes
+  - mkdir ./bin
   - sed -i -e "s,jars_dest =,jars_dest =./," build.properties
 script:
   # other script steps might be done before running the actual analysis
