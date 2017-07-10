@@ -1,8 +1,8 @@
-package aka.jmetaagents.main;
+package aka.jmetaagents.test;
 
 import aka.jmetaagents.main.jrottentomatoes.JRottenTomatoes;
 import aka.jmetaagents.main.jrottentomatoes.exceptions.JRottenTomatoesException;
-import resource.MetaagentConstants;
+import aka.jmetaagents.test.resource.MetaagentConstants;
 
 /**
  * Test classe

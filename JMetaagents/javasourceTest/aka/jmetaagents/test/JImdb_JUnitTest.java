@@ -1,4 +1,4 @@
-package aka.jmetaagents.main;
+package aka.jmetaagents.test;
 
 import org.eclipse.jdt.annotation.Nullable;
 
@@ -7,7 +7,7 @@ import aka.jmetaagents.main.jimdb.exceptions.JIMDBException;
 import aka.jmetaagents.main.jimdb.pojo.jmovie.Data;
 import aka.jmetaagents.main.jimdb.pojo.jmovie.JMovie;
 import aka.jmetaagents.main.jimdb.pojo.jmoviesearch.JMovieSearch;
-import resource.MetaagentConstants;
+import aka.jmetaagents.test.resource.MetaagentConstants;
 
 /**
  * Test classe

@@ -1,4 +1,4 @@
-package aka.jmetaagents.main;
+package aka.jmetaagents.test;
 
 import org.eclipse.jdt.annotation.Nullable;
 
@@ -14,7 +14,7 @@ import aka.jmetaagents.main.jallocine.pojo.jtvshow.JTVShow;
 import aka.jmetaagents.main.jallocine.pojo.jtvshowepisode.JTVShowEpisode;
 import aka.jmetaagents.main.jallocine.pojo.jtvshowseason.JTVShowSeason;
 import aka.jmetaagents.main.jallocine.pojo.jtvshowssearch.JTVShowsSearch;
-import resource.MetaagentConstants;
+import aka.jmetaagents.test.resource.MetaagentConstants;
 
 /**
  * Test classe

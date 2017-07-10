@@ -1,4 +1,4 @@
-package aka.jmetaagents.main;
+package aka.jmetaagents.test;
 
 import org.eclipse.jdt.annotation.Nullable;
 
@@ -6,7 +6,7 @@ import aka.jmetaagents.main.jtvdb.JTVDB;
 import aka.jmetaagents.main.jtvdb.exceptions.JTVDBException;
 import aka.jmetaagents.main.jtvdb.pojo.jtvshow.Data;
 import aka.jmetaagents.main.jtvdb.pojo.jtvshow.JTVShow;
-import resource.MetaagentConstants;
+import aka.jmetaagents.test.resource.MetaagentConstants;
 
 /**
  * Test classe

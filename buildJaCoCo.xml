@@ -33,9 +33,6 @@
         <javac encoding="8859_1" destdir="${result.test-classes.dir}" source="1.8" target="1.8" includeantruntime="false">
             <src path="${src.test.dir}" />
             <classpath refid="JMetaagents.classpath" />
-        	<classpath>
-        		<path location="${src.test.dir}"/>
-        	</classpath>
         </javac>
 		<javac srcdir="${src.test.dir}" destdir="${result.classes.dir}"
 			debug="true" includeantruntime="false" />

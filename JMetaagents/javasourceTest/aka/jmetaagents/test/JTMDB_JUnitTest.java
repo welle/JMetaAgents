@@ -1,8 +1,8 @@
-package aka.jmetaagents.main;
+package aka.jmetaagents.test;
 
 import aka.jmetaagents.main.jtmdb.JTMDB;
 import aka.jmetaagents.main.jtmdb.exceptions.JTMDBException;
-import resource.MetaagentConstants;
+import aka.jmetaagents.test.resource.MetaagentConstants;
 
 /**
  * Test classe

@@ -1,4 +1,4 @@
-package aka.jmetaagents.main.constantstests;
+package aka.jmetaagents.test.constantstests;
 
 import java.util.HashMap;
 import java.util.Map;
