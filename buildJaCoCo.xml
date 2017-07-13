@@ -6,6 +6,7 @@
 		can be itegrated into an existing build in three simple steps.
 	</description>
 
+	<property name="debuglevel" value="source,lines,vars" />
 	<property name="src.dir" location="./JMetaagents/javasource" />
 	<property name="src.test.dir" location="./JMetaagents/javasourceTest" />
 	<property name="result.dir" location="./reports" />
@@ -25,12 +26,12 @@
 
 	<target name="compile">
 		<mkdir dir="${result.classes.dir}" />
-		<javac encoding="8859_1" destdir="${result.classes.dir}" source="1.8" target="1.8" includeantruntime="false">
+		<javac encoding="8859_1" destdir="${result.classes.dir}" debug="true" debuglevel="${debuglevel}" source="1.8" target="1.8" includeantruntime="false">
             <src path="${src.dir}" />
             <classpath refid="JMetaagents.classpath" />
         </javac>
 
-        <javac encoding="8859_1" destdir="${result.test-classes.dir}" source="1.8" target="1.8" includeantruntime="false">
+        <javac encoding="8859_1" destdir="${result.test-classes.dir}" debug="true" debuglevel="${debuglevel}" source="1.8" target="1.8" includeantruntime="false">
             <src path="${src.test.dir}" />
             <classpath refid="JMetaagents.classpath" />
         </javac>
