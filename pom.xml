@@ -6,10 +6,6 @@
 	<version>1.0.0</version>
 
 	<properties>
-		<ALLOCINEAPIKEY_VALUE>key</ALLOCINEAPIKEY_VALUE>
-		<key.tvdb.user>user</key.tvdb.user>
-		<key.tvdb.key>key</key.tvdb.key>
-		<key.tvdb.api>key</key.tvdb.api>
 		<!-- Source encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -148,7 +144,6 @@
 			<artifactId>httpmime</artifactId>
 			<version>4.5.4</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -170,6 +165,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0-M1</version>
 				<configuration>
 					<additionalparam>-Xdoclint:none</additionalparam>
 				</configuration>
