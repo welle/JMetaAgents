@@ -23,24 +23,6 @@ public final class MetaagentConstants {
     public static final String ALLOCINE_API_KEY = "${ALLOCINEAPIKEY_VALUE}";
 
     /**
-     * IMDB Device value.
-     */
-    @NonNull
-    public static final String IMDB_DEVICE_VALUE = "a1e16abac75342d4a1b42a64a4c3bf195g530a1d";
-
-    /**
-     * API ID value.
-     */
-    @NonNull
-    public static final String IMDB_API_ID_VALUE = "iphone2_0";
-
-    /**
-     * IMDB API value.
-     */
-    @NonNull
-    public static final String IMDB_API_VALUE = "v1";
-
-    /**
      * TVDB API key value.
      */
     @NonNull
@@ -57,12 +39,6 @@ public final class MetaagentConstants {
      */
     @NonNull
     public static final String TVDB_USER_KEY = "${TVDB_USER_KEY_VALUE}";
-
-    /**
-     * IMDB Sig value.
-     */
-    @NonNull
-    public static final String IMDB_SIG_VALUE = "app1_1-f6gf8b542aa3cc4d16091adf111e99b1358387635";
 
     private MetaagentConstants() {
         // singleton
