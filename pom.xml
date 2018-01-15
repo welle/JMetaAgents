@@ -10,8 +10,11 @@
 		<key.tvdb.user>user</key.tvdb.user>
 		<key.tvdb.key>key</key.tvdb.key>
 		<key.tvdb.api>key</key.tvdb.api>
+		<!-- Source encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
+
 	<profiles>
 		<profile>
 			<id>m2e</id>
@@ -21,7 +24,7 @@
 				</property>
 			</activation>
 			<properties>
-				<m2e.jdt.annotationpath>/jmetaagents/src/main/resources/externalAnnotations</m2e.jdt.annotationpath>
+				<m2e.jdt.annotationpath>${basedir}/src/main/resources/externalAnnotations</m2e.jdt.annotationpath>
 			</properties>
 			<dependencies>
 			</dependencies>
@@ -69,6 +72,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
