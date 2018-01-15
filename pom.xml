@@ -6,7 +6,7 @@
 	<version>1.0.0</version>
 
 	<properties>
-		<key.allocine>key</key.allocine>
+		<ALLOCINEAPIKEY_VALUE>key</ALLOCINEAPIKEY_VALUE>
 		<key.tvdb.user>user</key.tvdb.user>
 		<key.tvdb.key>key</key.tvdb.key>
 		<key.tvdb.api>key</key.tvdb.api>
@@ -148,43 +148,21 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<!-- Filter Java files -->
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/test/java</directory>
+				<targetPath>../filtered-sources/java</targetPath>
+				<includes>
+					<include>**/*.java</include>
+				</includes>
+			</resource>
+		</resources>
+		<!-- change default source directory to filtered-sources/java -->
+		<testSourceDirectory>target/filtered-sources/java</testSourceDirectory>
+
 		<plugins>
-			<plugin>
-				<groupId>com.google.code.maven-replacer-plugin</groupId>
-				<artifactId>replacer</artifactId>
-				<version>1.5.3</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>replace</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<includes>
-						<include>${basedir}/src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java</include>
-					</includes>
-					<replacements>
-						<replacement>
-							<token>ALLOCINEAPIKEY_VALUE</token>
-							<value>${key.allocine}</value>
-						</replacement>
-						<replacement>
-							<token>TVDB_USERNAME_VALUE</token>
-							<value>${key.tvdb.user}</value>
-						</replacement>
-						<replacement>
-							<token>TVDB_USER_KEY_VALUE</token>
-							<value>${key.tvdb.key}</value>
-						</replacement>
-						<replacement>
-							<token>TVDB_API_KEY_VALUE</token>
-							<value>${key.tvdb.api}</value>
-						</replacement>
-					</replacements>
-				</configuration>
-			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>

@@ -20,7 +20,7 @@ public final class MetaagentConstants {
      * The allocine DB API key.
      */
     @NonNull
-    public static final String ALLOCINE_API_KEY = "ALLOCINEAPIKEY_VALUE";
+    public static final String ALLOCINE_API_KEY = "${ALLOCINEAPIKEY_VALUE}";
 
     /**
      * IMDB Device value.
@@ -44,19 +44,19 @@ public final class MetaagentConstants {
      * TVDB API key value.
      */
     @NonNull
-    public static final String TVDB_API_KEY = "TVDB_API_KEY_VALUE";
+    public static final String TVDB_API_KEY = "${TVDB_API_KEY_VALUE}";
 
     /**
      * TVDB Username value.
      */
     @NonNull
-    public static final String TVDB_USERNAME = "TVDB_USERNAME_VALUE";
+    public static final String TVDB_USERNAME = "${TVDB_USERNAME_VALUE}";
 
     /**
      * TVDB User key value.
      */
     @NonNull
-    public static final String TVDB_USER_KEY = "TVDB_USER_KEY_VALUE";
+    public static final String TVDB_USER_KEY = "${TVDB_USER_KEY_VALUE}";
 
     /**
      * IMDB Sig value.
