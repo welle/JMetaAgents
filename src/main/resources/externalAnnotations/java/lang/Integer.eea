@@ -1,0 +1,4 @@
+class java/lang/Integer
+valueOf
+ (I)Ljava/lang/Integer;
+ (I)L1java/lang/Integer;

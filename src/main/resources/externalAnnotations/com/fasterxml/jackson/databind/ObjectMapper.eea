@@ -1,0 +1,4 @@
+class com/fasterxml/jackson/databind/ObjectMapper
+readValue
+ <T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Class<TT;>;)TT;
+ <T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Class<TT;>;)T1T;

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="JMetaagents/javasourceTest"/>
-	<classpathentry kind="src" path="JMetaagents/javasource"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
-			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="annotationpath" value="/jmetaagents/src/main/resources/externalAnnotations"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.9.jar" sourcepath="lib/jackson-annotations-2.8.9-sources.jar">
-		<attributes>
-			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/jackson-core-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-core-2.8.9.jar" sourcepath="lib/jackson-core-2.8.9-sources.jar">
-		<attributes>
-			<attribute name="annotationpath" value="/JMediaInfo/externalAnnotations"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9-sources.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-databind-2.8.9.jar" sourcepath="lib/jackson-databind-2.8.9-sources.jar">
-		<attributes>
-			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/org.eclipse.jdt.annotation_2.0.0.v20140415-1436.jar"/>
-	<classpathentry kind="lib" path="lib/SwissKnife-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/fluent-hc-4.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/httpclient-4.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/httpclient-cache-4.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/httpcore-4.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/httpmime-4.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/JHTTPRequest/JHTTPRequest.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4">
 		<attributes>
-			<attribute name="annotationpath" value="/jmetaagents/externalAnnotations"/>
+			<attribute name="annotationpath" value="/jmetaagents/src/main/resources/externalAnnotations"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="annotationpath" value="/jmetaagents/src/main/resources/externalAnnotations"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
