@@ -7,6 +7,9 @@ before_script:
   - chmod +x ./.travis/upload-to-repo.sh
   - sed -i -e 's/\r$//' ./.travis/upload-to-repo.sh
   - sed -i -e "s,\"\${ALLOCINEAPIKEY_VALUE\}\",\"$ALLOCINE_API_KEY\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
+  - sed -i -e "s,\"\${TVDB_API_KEY_VALUE\}\",\"$TVDB_API_KEY\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
+  - sed -i -e "s,\"\${TVDB_USERNAME_VALUE\}\",\"$TVDB_USERNAME\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
+  - sed -i -e "s,\"\${TVDB_USER_KEY_VALUE\}\",\"$TVDB_USER_KEY\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
 script: 
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
   - mkdir -p /home/travis/repository
