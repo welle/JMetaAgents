@@ -138,6 +138,13 @@
 			<artifactId>httpcore</artifactId>
 			<version>4.4.8</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -147,19 +154,10 @@
 	</dependencies>
 
 	<build>
-		<resources>
-			<!-- Filter Java files -->
-			<resource>
-				<filtering>true</filtering>
-				<directory>src/test/java</directory>
-				<targetPath>../filtered-sources/java</targetPath>
-				<includes>
-					<include>**/*.java</include>
-				</includes>
-			</resource>
-		</resources>
-		<!-- change default source directory to filtered-sources/java -->
-		<testSourceDirectory>target/filtered-sources/java</testSourceDirectory>
+		<!-- <resources> Filter Java files <resource> <filtering>true</filtering> 
+			<directory>src/test/java</directory> <targetPath>../filtered-sources/java</targetPath> 
+			<includes> <include>**/*.java</include> </includes> </resource> </resources> 
+			change default source directory to filtered-sources/java <testSourceDirectory>target/filtered-sources/java</testSourceDirectory> -->
 
 		<plugins>
 			<plugin>
