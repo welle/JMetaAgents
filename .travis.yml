@@ -12,6 +12,7 @@ before_script:
   - sed -i -e "s,\"\${TVDB_USER_KEY_VALUE\}\",\"$TVDB_USER_KEY\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
   - sed -i -e "s,\"\${THE_MOVIE_DB_API_KEY_VALUE\}\",\"$THE_MOVIE_DB_API_KEY_VALUE\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
 script: 
+  - echo "MAVEN_OPTS='-Xmx2g -XX:MaxPermSize=512m'" > ~/.mavenrc
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
   - mkdir -p /home/travis/repository
 addons:
