@@ -3,8 +3,9 @@ sudo: required
 install: true
 jdk:
   - oraclejdk8
+before_install:
+  - echo 'MAVEN_OPTS="-Xmx1024m"' > ~/.mavenrc
 before_script:
-  - echo "MAVEN_OPTS='-Xmx2g -XX:MaxPermSize=512m'" > ~/.mavenrc
   - chmod +x ./.travis/upload-to-repo.sh
   - sed -i -e 's/\r$//' ./.travis/upload-to-repo.sh
   - sed -i -e "s,\"\${ALLOCINEAPIKEY_VALUE\}\",\"$ALLOCINE_API_KEY\"," ./src/test/java/aka/jmetaagents/test/resource/MetaagentConstants.java
