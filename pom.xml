@@ -9,9 +9,9 @@
 		<!-- Source encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-		<sonar.coverage.exclusions>
+		<sonar.exclusions>
 	      **/pojo/**/*.java
-	    </sonar.coverage.exclusions>
+	    </sonar.exclusions>
 	</properties>
 
 	<profiles>
