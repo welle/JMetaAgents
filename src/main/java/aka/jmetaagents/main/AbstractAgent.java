@@ -11,10 +11,8 @@ import java.util.logging.Logger;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
 
-import aka.jmetaagents.utils.TextUtils;
-
 /**
- * @author Charlotte
+ * This is a generated file.
  */
 public abstract class AbstractAgent {
 
@@ -73,7 +71,7 @@ public abstract class AbstractAgent {
         }
 
         String language = currentLocale.getLanguage();
-        if (TextUtils.isEmpty(language)) {
+        if (language == null || language.trim().length() == 0) {
             language = "en";
         }
 
@@ -94,7 +92,7 @@ public abstract class AbstractAgent {
         }
 
         String country = currentLocale.getCountry();
-        if (TextUtils.isEmpty(country)) {
+        if (country == null || country.trim().length() == 0) {
             country = "US";
         }
 
