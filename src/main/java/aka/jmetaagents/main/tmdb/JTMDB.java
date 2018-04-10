@@ -61,10 +61,6 @@ import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistQu
 import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistQuestionJacksonMapper;
 import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistResponse;
 import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistResponseJacksonMapper;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesQuestion;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesQuestionJacksonMapper;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesResponse;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesResponseJacksonMapper;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistQuestion;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistQuestionJacksonMapper;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistResponse;
@@ -105,6 +101,82 @@ import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosQuestion;
 import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosQuestionJacksonMapper;
 import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosResponse;
 import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesResponse;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarResponse;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsResponseJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosQuestionJacksonMapper;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosResponse;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosResponseJacksonMapper;
 
 /**
  * Generated JTMDB.
@@ -134,6 +206,8 @@ public final class JTMDB extends AbstractAgent {
     /**
      * Get Guest Token.
      *
+     * @param jGuestQuestion the query
+     * @return token
      * @throws JtmdbException
      */
     @Nullable
@@ -163,7 +237,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCollectionsdetails.
+     * Get JCollectionsdetails.<br/>
+     * Get collection details by id.
      *
      * @param jCollectionsdetailsQuestion the query
      * @return JCollectionsdetailsResponse
@@ -198,7 +273,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCollectionsimages.
+     * Get JCollectionsimages.<br/>
+     * Get the images for a collection by id.
      *
      * @param jCollectionsimagesQuestion the query
      * @return JCollectionsimagesResponse
@@ -233,7 +309,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCollectionstranslations.
+     * Get JCollectionstranslations.<br/>
+     * Get the list translations for a collection by id.
      *
      * @param jCollectionstranslationsQuestion the query
      * @return JCollectionstranslationsResponse
@@ -268,7 +345,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCompaniesalternatename.
+     * Get JCompaniesalternatename.<br/>
+     * Get the alternative names of a company.
      *
      * @param jCompaniesalternatenameQuestion the query
      * @return JCompaniesalternatenameResponse
@@ -299,7 +377,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCompaniesdetails.
+     * Get JCompaniesdetails.<br/>
+     * Get a companies details by id.
      *
      * @param jCompaniesdetailsQuestion the query
      * @return JCompaniesdetailsResponse
@@ -330,7 +409,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCompaniesimages.
+     * Get JCompaniesimages.<br/>
+     * There are two image formats that are supported for companies, PNG's and SVG's.
      *
      * @param jCompaniesimagesQuestion the query
      * @return JCompaniesimagesResponse
@@ -361,7 +441,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JCreditsdetails.
+     * Get JCreditsdetails.<br/>
+     * Get a movie or TV credit details by id.
      *
      * @param jCreditsdetailsQuestion the query
      * @return JCreditsdetailsResponse
@@ -392,7 +473,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JFindbyimdbid.
+     * Get JFindbyimdbid.<br/>
+     * The find method makes it easy to search for objects in our database by an IMDB id.
      *
      * @param jFindbyimdbidQuestion the query
      * @return JFindbyimdbidResponse
@@ -427,7 +509,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JFindbytvdbid.
+     * Get JFindbytvdbid.<br/>
+     * The find method makes it easy to search for objects in our database by an TVDB id.
      *
      * @param jFindbytvdbidQuestion the query
      * @return JFindbytvdbidResponse
@@ -462,7 +545,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JGenresgetmovielist.
+     * Get JGenresgetmovielist.<br/>
+     * Get the list of official genres for movies.
      *
      * @param jGenresgetmovielistQuestion the query
      * @return JGenresgetmovielistResponse
@@ -493,46 +577,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JGenresgetmovies.
-     *
-     * @param jGenresgetmoviesQuestion the query
-     * @return JGenresgetmoviesResponse
-     * @throws JtmdbException
-     */
-    @Nullable
-    public final JGenresgetmoviesResponse getJGenresgetmovies(@NonNull JGenresgetmoviesQuestion jGenresgetmoviesQuestion) throws JtmdbException {
-        JGenresgetmoviesResponse result = null;
-        
-        try {
-            String url = "https://api.themoviedb.org/3/genre/{genre_id}/movies?api_key={api_key}&language={language}&include_adult={include_adult}&sort_by=created_at.asc";
-            url = url.replace("{api_key}", this.apiKey);
-			final Integer genreId = jGenresgetmoviesQuestion.getGenreId();
-			if (genreId != null) {
-				url = url.replace("{genre_id}", genreId.toString());
-			}
-			final String language = jGenresgetmoviesQuestion.getLanguage();
-			if (language != null) {
-				url = url.replace("{language}", language.toString());
-			}
-			final Boolean includeAdult = jGenresgetmoviesQuestion.getIncludeAdult();
-			if (includeAdult != null) {
-				url = url.replace("{include_adult}", includeAdult.toString());
-			}
-
-            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
-
-
-            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
-            final String jsonString = response.getContent();
-            result = readValue(JGenresgetmoviesResponseJacksonMapper.class, jsonString);
-        } catch (final HTTPException | MalformedURLException e) {
-            throw new JtmdbException(e.getMessage(), e.getCause());
-        }
-        return result;
-    }
-
-    /**
-     * Get JGenresgettvlist.
+     * Get JGenresgettvlist.<br/>
+     * Get the list of official genres for TV shows.
      *
      * @param jGenresgettvlistQuestion the query
      * @return JGenresgettvlistResponse
@@ -563,7 +609,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesalternativetitles.
+     * Get JMoviesalternativetitles.<br/>
+     * Get all of the alternative titles for a movie.
      *
      * @param jMoviesalternativetitlesQuestion the query
      * @return JMoviesalternativetitlesResponse
@@ -598,7 +645,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviescredits.
+     * Get JMoviescredits.<br/>
+     * Get the cast and crew for a movie.
      *
      * @param jMoviescreditsQuestion the query
      * @return JMoviescreditsResponse
@@ -629,7 +677,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesdetails.
+     * Get JMoviesdetails.<br/>
+     * Get the primary information about a movie.
      *
      * @param jMoviesdetailsQuestion the query
      * @return JMoviesdetailsResponse
@@ -664,7 +713,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesexternalids.
+     * Get JMoviesexternalids.<br/>
+     * Get the external ids for a movie.
      *
      * @param jMoviesexternalidsQuestion the query
      * @return JMoviesexternalidsResponse
@@ -695,7 +745,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesimages.
+     * Get JMoviesimages.<br/>
+     * Get the images that belong to a movie.
      *
      * @param jMoviesimagesQuestion the query
      * @return JMoviesimagesResponse
@@ -730,7 +781,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesrecommandations.
+     * Get JMoviesrecommandations.<br/>
+     * Get a list of recommended movies for a movie.
      *
      * @param jMoviesrecommandationsQuestion the query
      * @return JMoviesrecommandationsResponse
@@ -769,7 +821,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviessimilar.
+     * Get JMoviessimilar.<br/>
+     * These items are assembled by looking at keywords and genres.
      *
      * @param jMoviessimilarQuestion the query
      * @return JMoviessimilarResponse
@@ -808,7 +861,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviestranslations.
+     * Get JMoviestranslations.<br/>
+     * Get a list of translations that have been created for a movie.
      *
      * @param jMoviestranslationsQuestion the query
      * @return JMoviestranslationsResponse
@@ -839,7 +893,8 @@ public final class JTMDB extends AbstractAgent {
     }
 
     /**
-     * Get JMoviesvideos.
+     * Get JMoviesvideos.<br/>
+     * Get the videos that have been added to a movie.
      *
      * @param jMoviesvideosQuestion the query
      * @return JMoviesvideosResponse
@@ -867,6 +922,746 @@ public final class JTMDB extends AbstractAgent {
             final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
             final String jsonString = response.getContent();
             result = readValue(JMoviesvideosResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvepisodecredits.<br/>
+     * Get the TV episode credits by id.
+     *
+     * @param jTvepisodecreditsQuestion the query
+     * @return JTvepisodecreditsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvepisodecreditsResponse getJTvepisodecredits(@NonNull JTvepisodecreditsQuestion jTvepisodecreditsQuestion) throws JtmdbException {
+        JTvepisodecreditsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits?api_key={api_key}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvepisodecreditsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvepisodecreditsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final Integer episodeNumber = jTvepisodecreditsQuestion.getEpisodeNumber();
+			if (episodeNumber != null) {
+				url = url.replace("{episode_number}", episodeNumber.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvepisodecreditsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvepisodedetails.<br/>
+     * Get the TV episode details by id.
+     *
+     * @param jTvepisodedetailsQuestion the query
+     * @return JTvepisodedetailsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvepisodedetailsResponse getJTvepisodedetails(@NonNull JTvepisodedetailsQuestion jTvepisodedetailsQuestion) throws JtmdbException {
+        JTvepisodedetailsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvepisodedetailsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvepisodedetailsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final Integer episodeNumber = jTvepisodedetailsQuestion.getEpisodeNumber();
+			if (episodeNumber != null) {
+				url = url.replace("{episode_number}", episodeNumber.toString());
+			}
+			final String language = jTvepisodedetailsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvepisodedetailsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvepisodeexternalids.<br/>
+     * Get the external ids for a TV episode.
+     *
+     * @param jTvepisodeexternalidsQuestion the query
+     * @return JTvepisodeexternalidsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvepisodeexternalidsResponse getJTvepisodeexternalids(@NonNull JTvepisodeexternalidsQuestion jTvepisodeexternalidsQuestion) throws JtmdbException {
+        JTvepisodeexternalidsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/external_ids?api_key={api_key}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvepisodeexternalidsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvepisodeexternalidsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final Integer episodeNumber = jTvepisodeexternalidsQuestion.getEpisodeNumber();
+			if (episodeNumber != null) {
+				url = url.replace("{episode_number}", episodeNumber.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvepisodeexternalidsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvepisodeimages.<br/>
+     * Get the images that have been added to a TV episode.
+     *
+     * @param jTvepisodeimagesQuestion the query
+     * @return JTvepisodeimagesResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvepisodeimagesResponse getJTvepisodeimages(@NonNull JTvepisodeimagesQuestion jTvepisodeimagesQuestion) throws JtmdbException {
+        JTvepisodeimagesResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images?api_key={api_key}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvepisodeimagesQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvepisodeimagesQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final Integer episodeNumber = jTvepisodeimagesQuestion.getEpisodeNumber();
+			if (episodeNumber != null) {
+				url = url.replace("{episode_number}", episodeNumber.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvepisodeimagesResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvepisodevideos.<br/>
+     * Get the videos that have been added to a TV episode.
+     *
+     * @param jTvepisodevideosQuestion the query
+     * @return JTvepisodevideosResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvepisodevideosResponse getJTvepisodevideos(@NonNull JTvepisodevideosQuestion jTvepisodevideosQuestion) throws JtmdbException {
+        JTvepisodevideosResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}/videos?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvepisodevideosQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvepisodevideosQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final Integer episodeNumber = jTvepisodevideosQuestion.getEpisodeNumber();
+			if (episodeNumber != null) {
+				url = url.replace("{episode_number}", episodeNumber.toString());
+			}
+			final String language = jTvepisodevideosQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvepisodevideosResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvseasoncredits.<br/>
+     * Get the credits for TV season.
+     *
+     * @param jTvseasoncreditsQuestion the query
+     * @return JTvseasoncreditsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvseasoncreditsResponse getJTvseasoncredits(@NonNull JTvseasoncreditsQuestion jTvseasoncreditsQuestion) throws JtmdbException {
+        JTvseasoncreditsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/credits?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvseasoncreditsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvseasoncreditsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final String language = jTvseasoncreditsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvseasoncreditsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvseasondetails.<br/>
+     * Get the TV season details by id.
+     *
+     * @param jTvseasondetailsQuestion the query
+     * @return JTvseasondetailsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvseasondetailsResponse getJTvseasondetails(@NonNull JTvseasondetailsQuestion jTvseasondetailsQuestion) throws JtmdbException {
+        JTvseasondetailsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvseasondetailsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvseasondetailsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final String language = jTvseasondetailsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvseasondetailsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvseasonexternalids.<br/>
+     * Get the credits for TV season.
+     *
+     * @param jTvseasonexternalidsQuestion the query
+     * @return JTvseasonexternalidsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvseasonexternalidsResponse getJTvseasonexternalids(@NonNull JTvseasonexternalidsQuestion jTvseasonexternalidsQuestion) throws JtmdbException {
+        JTvseasonexternalidsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/external_ids?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvseasonexternalidsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvseasonexternalidsQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final String language = jTvseasonexternalidsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvseasonexternalidsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvseasonimages.<br/>
+     * Get the images that belong to a TV season.
+     *
+     * @param jTvseasonimagesQuestion the query
+     * @return JTvseasonimagesResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvseasonimagesResponse getJTvseasonimages(@NonNull JTvseasonimagesQuestion jTvseasonimagesQuestion) throws JtmdbException {
+        JTvseasonimagesResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/images?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvseasonimagesQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvseasonimagesQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final String language = jTvseasonimagesQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvseasonimagesResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvseasonvideos.<br/>
+     * Get the images that belong to a TV season.
+     *
+     * @param jTvseasonvideosQuestion the query
+     * @return JTvseasonvideosResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvseasonvideosResponse getJTvseasonvideos(@NonNull JTvseasonvideosQuestion jTvseasonvideosQuestion) throws JtmdbException {
+        JTvseasonvideosResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/videos?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvseasonvideosQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final Integer seasonNumber = jTvseasonvideosQuestion.getSeasonNumber();
+			if (seasonNumber != null) {
+				url = url.replace("{season_number}", seasonNumber.toString());
+			}
+			final String language = jTvseasonvideosQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvseasonvideosResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvalternativetitles.<br/>
+     * Returns all of the alternative titles for a TV show.
+     *
+     * @param jTvalternativetitlesQuestion the query
+     * @return JTvalternativetitlesResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvalternativetitlesResponse getJTvalternativetitles(@NonNull JTvalternativetitlesQuestion jTvalternativetitlesQuestion) throws JtmdbException {
+        JTvalternativetitlesResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/alternative_titles?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvalternativetitlesQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvalternativetitlesQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvalternativetitlesResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvcredits.<br/>
+     * Get the credits (cast and crew) that have been added to a TV show.
+     *
+     * @param jTvcreditsQuestion the query
+     * @return JTvcreditsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvcreditsResponse getJTvcredits(@NonNull JTvcreditsQuestion jTvcreditsQuestion) throws JtmdbException {
+        JTvcreditsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/credits?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvcreditsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvcreditsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvcreditsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvdetails.<br/>
+     * Get the primary TV show details by id.
+     *
+     * @param jTvdetailsQuestion the query
+     * @return JTvdetailsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvdetailsResponse getJTvdetails(@NonNull JTvdetailsQuestion jTvdetailsQuestion) throws JtmdbException {
+        JTvdetailsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvdetailsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvdetailsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvdetailsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvexternalids.<br/>
+     * Get the external ids for a TV show. We currently support the following external sources.
+     *
+     * @param jTvexternalidsQuestion the query
+     * @return JTvexternalidsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvexternalidsResponse getJTvexternalids(@NonNull JTvexternalidsQuestion jTvexternalidsQuestion) throws JtmdbException {
+        JTvexternalidsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/external_ids?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvexternalidsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvexternalidsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvexternalidsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvimages.<br/>
+     * Get the images that belong to a TV show.
+     *
+     * @param jTvimagesQuestion the query
+     * @return JTvimagesResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvimagesResponse getJTvimages(@NonNull JTvimagesQuestion jTvimagesQuestion) throws JtmdbException {
+        JTvimagesResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/images?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvimagesQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvimagesQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvimagesResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvrecommandations.<br/>
+     * Get the list of TV show recommendations for this item.
+     *
+     * @param jTvrecommandationsQuestion the query
+     * @return JTvrecommandationsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvrecommandationsResponse getJTvrecommandations(@NonNull JTvrecommandationsQuestion jTvrecommandationsQuestion) throws JtmdbException {
+        JTvrecommandationsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/recommendations?api_key={api_key}&language={language}&page={page}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvrecommandationsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvrecommandationsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+			final String page = jTvrecommandationsQuestion.getPage();
+			if (page != null) {
+				url = url.replace("{page}", page.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvrecommandationsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvsimilar.<br/>
+     * Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
+     *
+     * @param jTvsimilarQuestion the query
+     * @return JTvsimilarResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvsimilarResponse getJTvsimilar(@NonNull JTvsimilarQuestion jTvsimilarQuestion) throws JtmdbException {
+        JTvsimilarResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/similar?api_key={api_key}&language={language}&page={page}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvsimilarQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvsimilarQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+			final String page = jTvsimilarQuestion.getPage();
+			if (page != null) {
+				url = url.replace("{page}", page.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvsimilarResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvtranslations.<br/>
+     * Get a list of the translations that exist for a TV show.
+     *
+     * @param jTvtranslationsQuestion the query
+     * @return JTvtranslationsResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvtranslationsResponse getJTvtranslations(@NonNull JTvtranslationsQuestion jTvtranslationsQuestion) throws JtmdbException {
+        JTvtranslationsResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/translations?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvtranslationsQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvtranslationsQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvtranslationsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtmdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JTvvideos.<br/>
+     * Get the videos that have been added to a TV show.
+     *
+     * @param jTvvideosQuestion the query
+     * @return JTvvideosResponse
+     * @throws JtmdbException
+     */
+    @Nullable
+    public final JTvvideosResponse getJTvvideos(@NonNull JTvvideosQuestion jTvvideosQuestion) throws JtmdbException {
+        JTvvideosResponse result = null;
+        
+        try {
+            String url = "https://api.themoviedb.org/3/tv/{tv_id}/videos?api_key={api_key}&language={language}";
+            url = url.replace("{api_key}", this.apiKey);
+			final Integer tvId = jTvvideosQuestion.getTvId();
+			if (tvId != null) {
+				url = url.replace("{tv_id}", tvId.toString());
+			}
+			final String language = jTvvideosQuestion.getLanguage();
+			if (language != null) {
+				url = url.replace("{language}", language.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JTvvideosResponseJacksonMapper.class, jsonString);
         } catch (final HTTPException | MalformedURLException e) {
             throw new JtmdbException(e.getMessage(), e.getCause());
         }

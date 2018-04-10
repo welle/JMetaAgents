@@ -22,6 +22,11 @@ import aka.jmetaagents.main.tvdb.authentication.refreshtoken.JRefreshtokenRespon
 import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidQuestion;
 import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidResponse;
 import aka.jmetaagents.main.tvdb.languages.languages.JLanguagesResponse;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidQuestion;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidResponse;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesQuestion;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesResponse;
+import aka.jmetaagents.main.tvdb.search.searchseriesparams.JSearchseriesparamsResponse;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidQuestion;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidResponse;
 import aka.jmetaagents.main.tvdb.series.seriesidactors.JSeriesidactorsQuestion;
@@ -106,6 +111,67 @@ public final class JTVDB_Test {
         
         // act : run the test
         final JLanguagesResponse result = jTVDB.getJLanguages();
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJLanguagesid method.
+     *
+     * @throws JtvdbException
+     */
+    @org.junit.Test 
+    public void getJLanguagesid_Test() throws JtvdbException {
+        // arrange : set up the test
+        final JLoginQuestion jLoginQuestion = new JLoginQuestion(this.apiKey, this.userKey, this.userName);
+        final JTVDB jTVDB = new JTVDB(jLoginQuestion);
+        
+        // act : run the test
+        final Integer id = null;
+        final JLanguagesidQuestion jTVDBQuestion = new JLanguagesidQuestion(id);
+        final JLanguagesidResponse result = jTVDB.getJLanguagesid(jTVDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJSearchseries method.
+     *
+     * @throws JtvdbException
+     */
+    @org.junit.Test 
+    public void getJSearchseries_Test() throws JtvdbException {
+        // arrange : set up the test
+        final JLoginQuestion jLoginQuestion = new JLoginQuestion(this.apiKey, this.userKey, this.userName);
+        final JTVDB jTVDB = new JTVDB(jLoginQuestion);
+        
+        // act : run the test
+        final String zap2itId = null;
+        final String imdbId = null;
+        final String name = null;
+        final String acceptLanguage = null;
+        final JSearchseriesQuestion jTVDBQuestion = new JSearchseriesQuestion(zap2itId, imdbId, name, acceptLanguage);
+        final JSearchseriesResponse result = jTVDB.getJSearchseries(jTVDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJSearchseriesparams method.
+     *
+     * @throws JtvdbException
+     */
+    @org.junit.Test 
+    public void getJSearchseriesparams_Test() throws JtvdbException {
+        // arrange : set up the test
+        final JLoginQuestion jLoginQuestion = new JLoginQuestion(this.apiKey, this.userKey, this.userName);
+        final JTVDB jTVDB = new JTVDB(jLoginQuestion);
+        
+        // act : run the test
+        final JSearchseriesparamsResponse result = jTVDB.getJSearchseriesparams();
         
         // assert : verify that the test run correctly
         assertNotNull(result);

@@ -29,6 +29,16 @@ import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidResponse;
 import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidResponseJacksonMapper;
 import aka.jmetaagents.main.tvdb.languages.languages.JLanguagesResponse;
 import aka.jmetaagents.main.tvdb.languages.languages.JLanguagesResponseJacksonMapper;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidQuestion;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidQuestionJacksonMapper;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidResponse;
+import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidResponseJacksonMapper;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesQuestion;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesQuestionJacksonMapper;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesResponse;
+import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesResponseJacksonMapper;
+import aka.jmetaagents.main.tvdb.search.searchseriesparams.JSearchseriesparamsResponse;
+import aka.jmetaagents.main.tvdb.search.searchseriesparams.JSearchseriesparamsResponseJacksonMapper;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidQuestion;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidQuestionJacksonMapper;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidResponse;
@@ -137,7 +147,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JRefreshtoken.
+     * Get JRefreshtoken.<br/>
+     * Refreshes your current, valid JWT token and returns a new token.
      *
      * @return JRefreshtokenResponse
      * @throws JtvdbException
@@ -163,7 +174,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JEpisodesid.
+     * Get JEpisodesid.<br/>
+     * Returns the full information for a given episode id.
      *
      * @param jEpisodesidQuestion the query
      * @return JEpisodesidResponse
@@ -198,7 +210,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JLanguages.
+     * Get JLanguages.<br/>
+     * All available languages.
      *
      * @return JLanguagesResponse
      * @throws JtvdbException
@@ -224,7 +237,99 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesid.
+     * Get JLanguagesid.<br/>
+     * Information about a particular language, given the language ID.
+     *
+     * @param jLanguagesidQuestion the query
+     * @return JLanguagesidResponse
+     * @throws JtvdbException
+     */
+    @Nullable
+    public final JLanguagesidResponse getJLanguagesid(@NonNull JLanguagesidQuestion jLanguagesidQuestion) throws JtvdbException {
+        JLanguagesidResponse result = null;
+        
+        try {
+            String url = "https://api.thetvdb.com/languages/{id}";
+			final Integer id = jLanguagesidQuestion.getId();
+			if (id != null) {
+                url = url.replace("{id}", id.toString());
+			}
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JLanguagesidResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtvdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JSearchseries.<br/>
+     * Allows the user to search for a series based on the following parameters.
+     *
+     * @param jSearchseriesQuestion the query
+     * @return JSearchseriesResponse
+     * @throws JtvdbException
+     */
+    @Nullable
+    public final JSearchseriesResponse getJSearchseries(@NonNull JSearchseriesQuestion jSearchseriesQuestion) throws JtvdbException {
+        JSearchseriesResponse result = null;
+        
+        try {
+            String url = "https://api.thetvdb.com/search/series";
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+			final String acceptLanguage = jSearchseriesQuestion.getAcceptLanguage();
+			if (acceptLanguage != null) {
+                httpRequestData.addHeader("Accept-Language", acceptLanguage);
+			}
+            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JSearchseriesResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtvdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JSearchseriesparams.<br/>
+     * Returns an array of parameters to query by in the /search/series route.
+     *
+     * @return JSearchseriesparamsResponse
+     * @throws JtvdbException
+     */
+    @Nullable
+    public final JSearchseriesparamsResponse getJSearchseriesparams() throws JtvdbException {
+        JSearchseriesparamsResponse result = null;
+        
+        try {
+            String url = "https://api.thetvdb.com/search/series/params";
+
+            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
+            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
+
+
+            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
+            final String jsonString = response.getContent();
+            result = readValue(JSearchseriesparamsResponseJacksonMapper.class, jsonString);
+        } catch (final HTTPException | MalformedURLException e) {
+            throw new JtvdbException(e.getMessage(), e.getCause());
+        }
+        return result;
+    }
+
+    /**
+     * Get JSeriesid.<br/>
+     * Returns a series records that contains all information known about a particular series id.
      *
      * @param jSeriesidQuestion the query
      * @return JSeriesidResponse
@@ -259,7 +364,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidactors.
+     * Get JSeriesidactors.<br/>
+     * Returns actors for the given series id
      *
      * @param jSeriesidactorsQuestion the query
      * @return JSeriesidactorsResponse
@@ -290,7 +396,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidepisodes.
+     * Get JSeriesidepisodes.<br/>
+     * All episodes for a given series. Paginated with 100 results per page.
      *
      * @param jSeriesidepisodesQuestion the query
      * @return JSeriesidepisodesResponse
@@ -321,7 +428,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidepisodesquery.
+     * Get JSeriesidepisodesquery.<br/>
+     * This route allows the user to query against episodes for the given series. The response is a paginated array of episode records that have been filtered down to basic information.
      *
      * @param jSeriesidepisodesqueryQuestion the query
      * @return JSeriesidepisodesqueryResponse
@@ -356,7 +464,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidepisodesqueryparams.
+     * Get JSeriesidepisodesqueryparams.<br/>
+     * Returns the allowed query keys for the /series/{id}/episodes/query route.
      *
      * @param jSeriesidepisodesqueryparamsQuestion the query
      * @return JSeriesidepisodesqueryparamsResponse
@@ -387,7 +496,9 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidepisodessummary.
+     * Get JSeriesidepisodessummary.<br/>
+     * 
+Returns a summary of the episodes and seasons available for the series.
      *
      * @param jSeriesidepisodessummaryQuestion the query
      * @return JSeriesidepisodessummaryResponse
@@ -418,7 +529,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidfilter.
+     * Get JSeriesidfilter.<br/>
+     * Returns a series records, filtered by the supplied comma-separated list of keys. Query keys can be found at the /series/{id}/filter/params route.
      *
      * @param jSeriesidfilterQuestion the query
      * @return JSeriesidfilterResponse
@@ -453,7 +565,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidfilterparams.
+     * Get JSeriesidfilterparams.<br/>
+     * Returns the list of keys available for the /series/{id}/filter route.
      *
      * @param jSeriesidfilterparamsQuestion the query
      * @return JSeriesidfilterparamsResponse
@@ -488,7 +601,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidimages.
+     * Get JSeriesidimages.<br/>
+     * Returns a summary of the images for a particular series
      *
      * @param jSeriesidimagesQuestion the query
      * @return JSeriesidimagesResponse
@@ -523,7 +637,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidimagesquery.
+     * Get JSeriesidimagesquery.<br/>
+     * Query images for the given series ID.
      *
      * @param jSeriesidimagesqueryQuestion the query
      * @return JSeriesidimagesqueryResponse
@@ -558,7 +673,8 @@ public final class JTVDB extends AbstractAgent {
     }
 
     /**
-     * Get JSeriesidimagesqueryparams.
+     * Get JSeriesidimagesqueryparams.<br/>
+     * Returns the allowed query keys for the /series/{id}/images/query route. Contains a parameter record for each unique keyType, listing values that will return results.
      *
      * @param jSeriesidimagesqueryparamsQuestion the query
      * @return JSeriesidimagesqueryparamsResponse

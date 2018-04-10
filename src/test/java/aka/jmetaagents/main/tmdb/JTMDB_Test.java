@@ -38,8 +38,6 @@ import aka.jmetaagents.main.tmdb.find.findbytvdbid.JFindbytvdbidQuestion;
 import aka.jmetaagents.main.tmdb.find.findbytvdbid.JFindbytvdbidResponse;
 import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistQuestion;
 import aka.jmetaagents.main.tmdb.genres.genresgetmovielist.JGenresgetmovielistResponse;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesQuestion;
-import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesResponse;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistQuestion;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistResponse;
 import aka.jmetaagents.main.tmdb.movies.moviesalternativetitles.JMoviesalternativetitlesQuestion;
@@ -60,6 +58,44 @@ import aka.jmetaagents.main.tmdb.movies.moviestranslations.JMoviestranslationsQu
 import aka.jmetaagents.main.tmdb.movies.moviestranslations.JMoviestranslationsResponse;
 import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosQuestion;
 import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodecredits.JTvepisodecreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodedetails.JTvepisodedetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeexternalids.JTvepisodeexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodeimages.JTvepisodeimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.episode.tvepisodevideos.JTvepisodevideosResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasoncredits.JTvseasoncreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasondetails.JTvseasondetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonexternalids.JTvseasonexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonimages.JTvseasonimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.season.tvseasonvideos.JTvseasonvideosResponse;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvalternativetitles.JTvalternativetitlesResponse;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvcredits.JTvcreditsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvdetails.JTvdetailsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvexternalids.JTvexternalidsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvimages.JTvimagesResponse;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvrecommandations.JTvrecommandationsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvsimilar.JTvsimilarResponse;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvtranslations.JTvtranslationsResponse;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosQuestion;
+import aka.jmetaagents.main.tmdb.tv.tvvideos.JTvvideosResponse;
 
 /**
  * Generated JTMDB Tests unit.
@@ -274,28 +310,6 @@ public final class JTMDB_Test {
     }
 
     /**
-     * Test getJGenresgetmovies method.
-     *
-     * @throws JtmdbException
-     */
-    @org.junit.Test 
-    public void getJGenresgetmovies_Test() throws JtmdbException {
-        // arrange : set up the test
-        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
-        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
-        
-        // act : run the test
-        final Boolean includeAdult = null;
-        final String language = null;
-        final Integer genreId = null;
-        final JGenresgetmoviesQuestion jTMDBQuestion = new JGenresgetmoviesQuestion(includeAdult, language, genreId);
-        final JGenresgetmoviesResponse result = jTMDB.getJGenresgetmovies(jTMDBQuestion);
-        
-        // assert : verify that the test run correctly
-        assertNotNull(result);
-    }
-
-    /**
      * Test getJGenresgettvlist method.
      *
      * @throws JtmdbException
@@ -498,6 +512,419 @@ public final class JTMDB_Test {
         final Integer movieId = null;
         final JMoviesvideosQuestion jTMDBQuestion = new JMoviesvideosQuestion(language, movieId);
         final JMoviesvideosResponse result = jTMDB.getJMoviesvideos(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvepisodecredits method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvepisodecredits_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer episodeNumber = null;
+        final Integer seasonNumber = null;
+        final JTvepisodecreditsQuestion jTMDBQuestion = new JTvepisodecreditsQuestion(tvId, episodeNumber, seasonNumber);
+        final JTvepisodecreditsResponse result = jTMDB.getJTvepisodecredits(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvepisodedetails method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvepisodedetails_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer episodeNumber = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvepisodedetailsQuestion jTMDBQuestion = new JTvepisodedetailsQuestion(tvId, episodeNumber, seasonNumber, language);
+        final JTvepisodedetailsResponse result = jTMDB.getJTvepisodedetails(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvepisodeexternalids method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvepisodeexternalids_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer episodeNumber = null;
+        final Integer seasonNumber = null;
+        final JTvepisodeexternalidsQuestion jTMDBQuestion = new JTvepisodeexternalidsQuestion(tvId, episodeNumber, seasonNumber);
+        final JTvepisodeexternalidsResponse result = jTMDB.getJTvepisodeexternalids(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvepisodeimages method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvepisodeimages_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer episodeNumber = null;
+        final Integer seasonNumber = null;
+        final JTvepisodeimagesQuestion jTMDBQuestion = new JTvepisodeimagesQuestion(tvId, episodeNumber, seasonNumber);
+        final JTvepisodeimagesResponse result = jTMDB.getJTvepisodeimages(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvepisodevideos method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvepisodevideos_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer episodeNumber = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvepisodevideosQuestion jTMDBQuestion = new JTvepisodevideosQuestion(tvId, episodeNumber, seasonNumber, language);
+        final JTvepisodevideosResponse result = jTMDB.getJTvepisodevideos(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvseasoncredits method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvseasoncredits_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvseasoncreditsQuestion jTMDBQuestion = new JTvseasoncreditsQuestion(tvId, seasonNumber, language);
+        final JTvseasoncreditsResponse result = jTMDB.getJTvseasoncredits(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvseasondetails method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvseasondetails_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvseasondetailsQuestion jTMDBQuestion = new JTvseasondetailsQuestion(tvId, seasonNumber, language);
+        final JTvseasondetailsResponse result = jTMDB.getJTvseasondetails(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvseasonexternalids method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvseasonexternalids_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvseasonexternalidsQuestion jTMDBQuestion = new JTvseasonexternalidsQuestion(tvId, seasonNumber, language);
+        final JTvseasonexternalidsResponse result = jTMDB.getJTvseasonexternalids(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvseasonimages method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvseasonimages_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvseasonimagesQuestion jTMDBQuestion = new JTvseasonimagesQuestion(tvId, seasonNumber, language);
+        final JTvseasonimagesResponse result = jTMDB.getJTvseasonimages(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvseasonvideos method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvseasonvideos_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final Integer seasonNumber = null;
+        final String language = null;
+        final JTvseasonvideosQuestion jTMDBQuestion = new JTvseasonvideosQuestion(tvId, seasonNumber, language);
+        final JTvseasonvideosResponse result = jTMDB.getJTvseasonvideos(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvalternativetitles method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvalternativetitles_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvalternativetitlesQuestion jTMDBQuestion = new JTvalternativetitlesQuestion(tvId, language);
+        final JTvalternativetitlesResponse result = jTMDB.getJTvalternativetitles(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvcredits method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvcredits_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvcreditsQuestion jTMDBQuestion = new JTvcreditsQuestion(tvId, language);
+        final JTvcreditsResponse result = jTMDB.getJTvcredits(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvdetails method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvdetails_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvdetailsQuestion jTMDBQuestion = new JTvdetailsQuestion(tvId, language);
+        final JTvdetailsResponse result = jTMDB.getJTvdetails(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvexternalids method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvexternalids_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvexternalidsQuestion jTMDBQuestion = new JTvexternalidsQuestion(tvId, language);
+        final JTvexternalidsResponse result = jTMDB.getJTvexternalids(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvimages method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvimages_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvimagesQuestion jTMDBQuestion = new JTvimagesQuestion(tvId, language);
+        final JTvimagesResponse result = jTMDB.getJTvimages(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvrecommandations method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvrecommandations_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final String page = null;
+        final JTvrecommandationsQuestion jTMDBQuestion = new JTvrecommandationsQuestion(tvId, language, page);
+        final JTvrecommandationsResponse result = jTMDB.getJTvrecommandations(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvsimilar method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvsimilar_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final String page = null;
+        final JTvsimilarQuestion jTMDBQuestion = new JTvsimilarQuestion(tvId, language, page);
+        final JTvsimilarResponse result = jTMDB.getJTvsimilar(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvtranslations method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvtranslations_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvtranslationsQuestion jTMDBQuestion = new JTvtranslationsQuestion(tvId, language);
+        final JTvtranslationsResponse result = jTMDB.getJTvtranslations(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJTvvideos method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJTvvideos_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer tvId = null;
+        final String language = null;
+        final JTvvideosQuestion jTMDBQuestion = new JTvvideosQuestion(tvId, language);
+        final JTvvideosResponse result = jTMDB.getJTvvideos(jTMDBQuestion);
         
         // assert : verify that the test run correctly
         assertNotNull(result);
