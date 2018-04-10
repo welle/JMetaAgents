@@ -42,6 +42,24 @@ import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesQuestion
 import aka.jmetaagents.main.tmdb.genres.genresgetmovies.JGenresgetmoviesResponse;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistQuestion;
 import aka.jmetaagents.main.tmdb.genres.genresgettvlist.JGenresgettvlistResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesalternativetitles.JMoviesalternativetitlesQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesalternativetitles.JMoviesalternativetitlesResponse;
+import aka.jmetaagents.main.tmdb.movies.moviescredits.JMoviescreditsQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviescredits.JMoviescreditsResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesdetails.JMoviesdetailsQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesdetails.JMoviesdetailsResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesexternalids.JMoviesexternalidsQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesexternalids.JMoviesexternalidsResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesimages.JMoviesimagesQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesimages.JMoviesimagesResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesrecommandations.JMoviesrecommandationsQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesrecommandations.JMoviesrecommandationsResponse;
+import aka.jmetaagents.main.tmdb.movies.moviessimilar.JMoviessimilarQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviessimilar.JMoviessimilarResponse;
+import aka.jmetaagents.main.tmdb.movies.moviestranslations.JMoviestranslationsQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviestranslations.JMoviestranslationsResponse;
+import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosQuestion;
+import aka.jmetaagents.main.tmdb.movies.moviesvideos.JMoviesvideosResponse;
 
 /**
  * Generated JTMDB Tests unit.
@@ -292,6 +310,194 @@ public final class JTMDB_Test {
         final String language = null;
         final JGenresgettvlistQuestion jTMDBQuestion = new JGenresgettvlistQuestion(language);
         final JGenresgettvlistResponse result = jTMDB.getJGenresgettvlist(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesalternativetitles method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesalternativetitles_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String country = null;
+        final Integer movieId = null;
+        final JMoviesalternativetitlesQuestion jTMDBQuestion = new JMoviesalternativetitlesQuestion(country, movieId);
+        final JMoviesalternativetitlesResponse result = jTMDB.getJMoviesalternativetitles(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviescredits method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviescredits_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer movieId = null;
+        final JMoviescreditsQuestion jTMDBQuestion = new JMoviescreditsQuestion(movieId);
+        final JMoviescreditsResponse result = jTMDB.getJMoviescredits(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesdetails method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesdetails_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String language = null;
+        final Integer movieId = null;
+        final JMoviesdetailsQuestion jTMDBQuestion = new JMoviesdetailsQuestion(language, movieId);
+        final JMoviesdetailsResponse result = jTMDB.getJMoviesdetails(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesexternalids method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesexternalids_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer movieId = null;
+        final JMoviesexternalidsQuestion jTMDBQuestion = new JMoviesexternalidsQuestion(movieId);
+        final JMoviesexternalidsResponse result = jTMDB.getJMoviesexternalids(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesimages method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesimages_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String language = null;
+        final Integer movieId = null;
+        final JMoviesimagesQuestion jTMDBQuestion = new JMoviesimagesQuestion(language, movieId);
+        final JMoviesimagesResponse result = jTMDB.getJMoviesimages(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesrecommandations method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesrecommandations_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String language = null;
+        final Integer page = null;
+        final Integer movieId = null;
+        final JMoviesrecommandationsQuestion jTMDBQuestion = new JMoviesrecommandationsQuestion(language, page, movieId);
+        final JMoviesrecommandationsResponse result = jTMDB.getJMoviesrecommandations(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviessimilar method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviessimilar_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String language = null;
+        final Integer page = null;
+        final Integer movieId = null;
+        final JMoviessimilarQuestion jTMDBQuestion = new JMoviessimilarQuestion(language, page, movieId);
+        final JMoviessimilarResponse result = jTMDB.getJMoviessimilar(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviestranslations method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviestranslations_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final Integer movieId = null;
+        final JMoviestranslationsQuestion jTMDBQuestion = new JMoviestranslationsQuestion(movieId);
+        final JMoviestranslationsResponse result = jTMDB.getJMoviestranslations(jTMDBQuestion);
+        
+        // assert : verify that the test run correctly
+        assertNotNull(result);
+    }
+
+    /**
+     * Test getJMoviesvideos method.
+     *
+     * @throws JtmdbException
+     */
+    @org.junit.Test 
+    public void getJMoviesvideos_Test() throws JtmdbException {
+        // arrange : set up the test
+        final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
+        
+        // act : run the test
+        final String language = null;
+        final Integer movieId = null;
+        final JMoviesvideosQuestion jTMDBQuestion = new JMoviesvideosQuestion(language, movieId);
+        final JMoviesvideosResponse result = jTMDB.getJMoviesvideos(jTMDBQuestion);
         
         // assert : verify that the test run correctly
         assertNotNull(result);
