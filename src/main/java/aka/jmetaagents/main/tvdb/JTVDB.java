@@ -29,16 +29,6 @@ import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidResponse;
 import aka.jmetaagents.main.tvdb.episodes.episodesid.JEpisodesidResponseJacksonMapper;
 import aka.jmetaagents.main.tvdb.languages.languages.JLanguagesResponse;
 import aka.jmetaagents.main.tvdb.languages.languages.JLanguagesResponseJacksonMapper;
-import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidQuestion;
-import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidQuestionJacksonMapper;
-import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidResponse;
-import aka.jmetaagents.main.tvdb.languages.languagesid.JLanguagesidResponseJacksonMapper;
-import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesQuestion;
-import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesQuestionJacksonMapper;
-import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesResponse;
-import aka.jmetaagents.main.tvdb.search.searchseries.JSearchseriesResponseJacksonMapper;
-import aka.jmetaagents.main.tvdb.search.searchseriesparams.JSearchseriesparamsResponse;
-import aka.jmetaagents.main.tvdb.search.searchseriesparams.JSearchseriesparamsResponseJacksonMapper;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidQuestion;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidQuestionJacksonMapper;
 import aka.jmetaagents.main.tvdb.series.seriesid.JSeriesidResponse;
@@ -227,94 +217,6 @@ public final class JTVDB extends AbstractAgent {
             final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
             final String jsonString = response.getContent();
             result = readValue(JLanguagesResponseJacksonMapper.class, jsonString);
-        } catch (final HTTPException | MalformedURLException e) {
-            throw new JtvdbException(e.getMessage(), e.getCause());
-        }
-        return result;
-    }
-
-    /**
-     * Get JLanguagesid.
-     *
-     * @param jLanguagesidQuestion the query
-     * @return JLanguagesidResponse
-     * @throws JtvdbException
-     */
-    @Nullable
-    public final JLanguagesidResponse getJLanguagesid(@NonNull JLanguagesidQuestion jLanguagesidQuestion) throws JtvdbException {
-        JLanguagesidResponse result = null;
-        
-        try {
-            String url = "https://api.thetvdb.com/languages/{id}";
-			final Integer id = jLanguagesidQuestion.getId();
-			if (id != null) {
-                url = url.replace("{id}", id.toString());
-			}
-
-            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
-            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
-
-
-            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
-            final String jsonString = response.getContent();
-            result = readValue(JLanguagesidResponseJacksonMapper.class, jsonString);
-        } catch (final HTTPException | MalformedURLException e) {
-            throw new JtvdbException(e.getMessage(), e.getCause());
-        }
-        return result;
-    }
-
-    /**
-     * Get JSearchseries.
-     *
-     * @param jSearchseriesQuestion the query
-     * @return JSearchseriesResponse
-     * @throws JtvdbException
-     */
-    @Nullable
-    public final JSearchseriesResponse getJSearchseries(@NonNull JSearchseriesQuestion jSearchseriesQuestion) throws JtvdbException {
-        JSearchseriesResponse result = null;
-        
-        try {
-            String url = "https://api.thetvdb.com/search/series";
-
-            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
-			final String acceptLanguage = jSearchseriesQuestion.getAcceptLanguage();
-			if (acceptLanguage != null) {
-                httpRequestData.addHeader("Accept-Language", acceptLanguage);
-			}
-            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
-
-
-            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
-            final String jsonString = response.getContent();
-            result = readValue(JSearchseriesResponseJacksonMapper.class, jsonString);
-        } catch (final HTTPException | MalformedURLException e) {
-            throw new JtvdbException(e.getMessage(), e.getCause());
-        }
-        return result;
-    }
-
-    /**
-     * Get JSearchseriesparams.
-     *
-     * @return JSearchseriesparamsResponse
-     * @throws JtvdbException
-     */
-    @Nullable
-    public final JSearchseriesparamsResponse getJSearchseriesparams() throws JtvdbException {
-        JSearchseriesparamsResponse result = null;
-        
-        try {
-            String url = "https://api.thetvdb.com/search/series/params";
-
-            final HTTPRequestData httpRequestData = new HTTPRequestData(url);
-            httpRequestData.addHeader("Authorization", "Bearer " + this.token);
-
-
-            final HTTPResponseString response = (HTTPResponseString) this.httpManager.sendGetRequest(httpRequestData);
-            final String jsonString = response.getContent();
-            result = readValue(JSearchseriesparamsResponseJacksonMapper.class, jsonString);
         } catch (final HTTPException | MalformedURLException e) {
             throw new JtvdbException(e.getMessage(), e.getCause());
         }
