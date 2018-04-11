@@ -425,9 +425,9 @@ public final class JTVDB_Test {
     public void getImage_Test() throws JtvdbException {
         // arrange : set up the test
         final JLoginQuestion jLoginQuestion = new JLoginQuestion(this.apiKey, this.userKey, this.userName);
+        final JTVDB jTVDB = new JTVDB(jLoginQuestion);
         
         // act : run the test
-        final JTVDB jTVDB = new JTVDB(jLoginQuestion);
         String urlImage = "";
         final BufferedImage result = jTVDB.getImage(urlImage);
         

@@ -17,6 +17,12 @@ public final class MetaagentConstants {
     public static final String THE_MOVIE_DB_API_KEY = "${THE_MOVIE_DB_API_KEY_VALUE}";
 
     /**
+     * The OMDB API key.
+     */
+    @NonNull
+    public static final String THE_OMDB_API_KEY = "${THE_OMDB_API_KEY}";
+
+    /**
      * The allocine DB API key.
      */
     @NonNull

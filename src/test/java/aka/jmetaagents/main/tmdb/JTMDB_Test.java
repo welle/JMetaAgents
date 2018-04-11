@@ -939,9 +939,9 @@ public final class JTMDB_Test {
     public void getImage_Test() throws JtmdbException {
         // arrange : set up the test
         final JGuestQuestion jGuestQuestion = new JGuestQuestion(this.apiKey);
+        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
         
         // act : run the test
-        final JTMDB jTMDB = new JTMDB(jGuestQuestion);
         String urlImage = "";
         final BufferedImage result = jTMDB.getImage(urlImage);
         
