@@ -1,6 +1,6 @@
 # JMetaAgents [![Build Status](https://travis-ci.org/welle/JMetaAgents.svg?branch=master)](https://travis-ci.org/welle/JMetaAgents) [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=aka.jmetaagents:JMetaAgents)](https://sonarcloud.io/dashboard/index/aka.jmetaagents:JMetaAgents) #
 
-Java library to retrieve Meta Agents informations from Allocine, ...
+Java library to retrieve Meta Agents informations from "The movie database", "TVDB" and "OMDB".
 
 ### Version
 
